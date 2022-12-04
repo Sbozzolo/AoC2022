@@ -40,5 +40,18 @@ data←⊃⎕NGET'input3.txt'1
 +/{⊃∪↑3∩/⍵}¨(3/⍳(÷3)×≢data)⊆{((26 + ⍳26), ⍳26)[(⎕A, (¯1∘⎕C ⎕A))⍸⍵]}¨data
 ```
 
+[Problem 4](https://adventofcode.com/2022/day/4)
+
+``` apl
+⍝ 4 Part 1
+data←⊃⎕NGET'input4.txt'1
+
++/ {0≥×/×+/(2 4⍴1 0 ¯1 0   0 1 0 ¯1) × 2 4⍴⍎¨'-,'(~⍤∊⍨⊆⊢)⍵}¨data
+
+⍝ 4 Part 2
+
++/{m ← ⍎¨'-,'(~⍤∊⍨⊆⊢)⍵ ⋄ 0≤(m[4]⌊m[2])-(m[3]⌈m[1])}¨data
+```
+
 
 

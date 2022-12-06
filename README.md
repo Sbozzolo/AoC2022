@@ -55,3 +55,22 @@ data←⊃⎕NGET'input4.txt'1
 
 
 
+[Problem 4](https://adventofcode.com/2022/day/5)
+
+``` apl
+⍝ 4 Part 1
+data←⊃⎕NGET'input5.txt'1
+
+stack ← ↑8↑data
+columns ← ~∘' '¨(↓(⍉stack))[2 + 4 × ¯1 + ⍳9]
+instructions ← 10↓data
+{howmany ← ⍎⍵[6 7] ⋄ from ← ⍎⍵[13 14] ⋄ to ← ⍎⍵[(≢⍵)] ⋄ columns[to] ← ↓(⌽howmany↑↑columns[from]), ↑columns[to] ⋄columns[from] ← ↓howmany↓↑columns[from]}¨instructions
+1↑¨ columns
+
+⍝ 4 Part 2
+
+columns ← ~∘' '¨(↓(⍉stack))[2 + 4 × ¯1 + ⍳9]
+{howmany ← ⍎⍵[6 7] ⋄ from ← ⍎⍵[13 14] ⋄ to ← ⍎⍵[(≢⍵)] ⋄ columns[to] ← ↓(howmany↑↑columns[from]), ↑columns[to] ⋄columns[from] ← ↓howmany↓↑columns[from]}¨instructions
+1↑¨ columns
+```
+

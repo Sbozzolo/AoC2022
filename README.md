@@ -53,12 +53,10 @@ data←⊃⎕NGET'input4.txt'1
 +/{m ← ⍎¨'-,'(~⍤∊⍨⊆⊢)⍵ ⋄ 0≤(m[4]⌊m[2])-(m[3]⌈m[1])}¨data
 ```
 
-
-
-[Problem 4](https://adventofcode.com/2022/day/5)
+[Problem 5](https://adventofcode.com/2022/day/5)
 
 ``` apl
-⍝ 4 Part 1
+⍝ 5 Part 1
 data←⊃⎕NGET'input5.txt'1
 
 stack ← ↑8↑data
@@ -67,10 +65,22 @@ instructions ← 10↓data
 {howmany ← ⍎⍵[6 7] ⋄ from ← ⍎⍵[13 14] ⋄ to ← ⍎⍵[(≢⍵)] ⋄ columns[to] ← ↓(⌽howmany↑↑columns[from]), ↑columns[to] ⋄columns[from] ← ↓howmany↓↑columns[from]}¨instructions
 1↑¨ columns
 
-⍝ 4 Part 2
+⍝ 5 Part 2
 
 columns ← ~∘' '¨(↓(⍉stack))[2 + 4 × ¯1 + ⍳9]
 {howmany ← ⍎⍵[6 7] ⋄ from ← ⍎⍵[13 14] ⋄ to ← ⍎⍵[(≢⍵)] ⋄ columns[to] ← ↓(howmany↑↑columns[from]), ↑columns[to] ⋄columns[from] ← ↓howmany↓↑columns[from]}¨instructions
 1↑¨ columns
 ```
 
+[Problem 6](https://adventofcode.com/2022/day/6)
+
+``` apl
+⍝ 6 Part 1
+data←⊃⎕NGET'input6.txt'1
+
+3 + ⊃⍸4=(≢∪)¨4,/↑data[1]
+
+⍝ 6 Part 2
+
+13 + ⊃⍸14=(≢∪)¨14,/↑data[1]
+```

@@ -84,3 +84,8 @@ data←⊃⎕NGET'input6.txt'1
 
 13 + ⊃⍸14=(≢∪)¨14,/↑data[1]
 ```
+
+
+[Problem 7](https://adventofcode.com/2022/day/7)
+
+Lots of parsing. Beyond my APL skills.
